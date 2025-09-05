@@ -14,6 +14,10 @@ function App() {
     );
   };
 
+  const addTodo = (todo) => {
+    setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
+  };
+
   const toggleComplete = (id) => {
     setTodos((prev) =>
       prev.map((prevTodo) =>
@@ -43,9 +47,7 @@ function App() {
      },[todos])
      
 
-  const addTodo = (todo) => {
-    setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
-  };
+  
 
   return (
     <TodoProvider
