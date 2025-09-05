@@ -21,8 +21,8 @@ const todoSlice = createSlice({
     },
     updateTodo: (state, action) => {
       state.todos = state.todos.map((todo) =>
-        todo.id === state.payload.id
-          ? { ...todo, text: state.payload, text }
+        todo.id === action.payload.id
+          ? { ...todo, text: action.payload.text }
           : todo
       );
     },
